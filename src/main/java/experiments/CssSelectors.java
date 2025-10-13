@@ -27,9 +27,17 @@ public class CssSelectors {
         divElements.click();
         pause(4000);
 
-       // WebElement radioButton = driver.findElement(By.cssSelector("li[id='item-2']"));
-        WebElement radioButton = driver.findElement(By.id("item-2"));
+        // WebElement radioButton = driver.findElement(By.cssSelector("li[id='item-2']"));
+        //WebElement radioButton = driver.findElement(By.id("item-2"));
+        WebElement radioButton = driver.findElement(By.cssSelector("#item-2"));
         radioButton.click();
+        pause(4000);
+
+        //driver.navigate().back();
+        //driver.navigate().back();
+        WebElement btnYes = driver.findElement(By.cssSelector("label[for='yesRadio']"));
+        btnYes.click();
+
         pause(4000);
 
 
