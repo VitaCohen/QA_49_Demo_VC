@@ -39,8 +39,14 @@ public class CssSelectors {
         WebElement btnYes = driver.findElement(By.cssSelector("label[for='yesRadio']"));
         btnYes.click();
 
-        pause(4000);
+        driver.navigate().back();
+        driver.navigate().back();
 
+        WebElement divBookStore = driver.findElement(By.cssSelector("div[class='category-cards'] " +
+                "div[class='card mt-4 top-card']:last-child"));
+        divBookStore.click();
+
+        pause(4000);
 
         //driver.close();
         driver.quit();
