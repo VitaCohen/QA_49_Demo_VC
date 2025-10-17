@@ -1,6 +1,7 @@
 package experiments;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -53,6 +54,16 @@ public class CssSelectors {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void hideBanner() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.querySelector('#fixedban').style.display='none'");
+    }
+
+    public void hideFooter() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.querySelector('footer').style.display='none'");
     }
 
 }
