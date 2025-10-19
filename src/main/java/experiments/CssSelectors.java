@@ -25,6 +25,8 @@ public class CssSelectors {
 
         //WebElement divElements = driver.findElement(By.cssSelector("div[class='card-up']"));
         WebElement divElements = driver.findElement(By.cssSelector(".card-up"));
+        hideBanner();
+
         divElements.click();
         pause(4000);
 
@@ -37,6 +39,7 @@ public class CssSelectors {
         //driver.navigate().back();
         //driver.navigate().back();
         WebElement btnYes = driver.findElement(By.cssSelector("label[for='yesRadio']"));
+        hideFooter();
         btnYes.click();
 
         driver.navigate().back();
@@ -45,12 +48,46 @@ public class CssSelectors {
         WebElement divBookStore = driver.findElement(By.cssSelector("div[class='category-cards'] " +
                 "div[class='card mt-4 top-card']:last-child"));
         divBookStore.click();
-
         pause(4000);
+        driver.navigate().back();
+        pause(4000);
+        WebElement divWidgets= driver.findElement(By.cssSelector("div[class='category-cards'] " +
+                "div[class='card mt-4 top-card']:nth-child(4)"));
+        divWidgets.click();
+        pause(4000);
+        driver.navigate().back();
+        pause(4000);
+
+        WebElement divAlerts= driver.findElement(By.cssSelector("div[class='category-cards'] " +
+                "div[class='card mt-4 top-card']:nth-child(3) div[class='card-body'] h5"));
+        System.out.println(divAlerts.getText());
+
+
 
         //driver.close();
         driver.quit();
+    }
 
+    @Test
+    public void clickChekBox(){
+        driver.get("https://demoqa.com/");
+        driver.manage().window().maximize();
+        hideBanner();
+        WebElement divElements = driver.findElement(By.cssSelector(".card"));
+        //WebElement divElements = driver.findElement(By.cssSelector("div[class='card mt-4 top-card']"));
+        divElements.click();
+        WebElement btnCheckBox = driver.findElement(By.id("item-1"));
+        //WebElement btnCheckBox = driver.findElement(By.cssSelector("#item-1"));
+        //WebElement btnCheckBox = driver.findElement(By.cssSelector("li[id='item-1']"));
+        //WebElement btnCheckBox = driver.findElement(By.cssSelector("*[id='item-1']"));
+        btnCheckBox.click();
+
+        hideFooter();
+        WebElement checkBox = driver.findElement(By
+                .cssSelector("svg[class='rct-icon rct-icon-uncheck']"));
+        checkBox.click();
+        pause(4000);
+        driver.quit();
 
     }
 
