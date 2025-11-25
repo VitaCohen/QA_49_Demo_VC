@@ -19,7 +19,7 @@ jobs:
       - name: Install chrome
         uses: browser-actions/setup-chrome@latest
       - name: Setup Gradle
-        uses: gradle-actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v4
       - name: Build with Gradle Wrapper
         run: ./gradlew clean smoketests
       - name: Store reports
