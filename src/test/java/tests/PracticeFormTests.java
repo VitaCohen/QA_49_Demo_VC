@@ -41,7 +41,7 @@ public class PracticeFormTests extends AppManager {
         Assert.assertTrue(new PracticeFormPage(getDriver()).validateModalMessage());
     }
 
-    @Test
+    @Test(groups = "smoke")
     public void practiceFormPositiveTestWithSoftAssert(){
         List<Hobbies> hobbies = new ArrayList<>();
         hobbies.add(Hobbies.MUSIC);
